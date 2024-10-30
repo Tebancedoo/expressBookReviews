@@ -85,7 +85,7 @@ public_users.get('/title/:title',function (req, res) {
 
 //  Get book review
 public_users.get('/review/:isbn',function (req, res) {
-  const review = req.params.review;
+  const isbn = req.params.isbn;
 
   // Simulamos una operación asíncrona con una promesa
   new Promise((resolve, reject) => {

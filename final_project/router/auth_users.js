@@ -59,7 +59,7 @@ regd_users.put("/auth/review/:isbn", (req, res) => {
   const review = req.body.review;
 
   if (isbn && review){
-    books.reviews.push({"review": review})
+    books.reviews.push({ review: review });
    return res.status(200).json({message: "Review successfully registered."});
     } else {
         return res.status(404).json({message: "User already exists!"});
@@ -69,7 +69,6 @@ regd_users.put("/auth/review/:isbn", (req, res) => {
 
 regd_users.delete("/auth/review/:isbn", (req, res) => {
     const isbn = req.params.isbn;
-    const userId = req.body.userId; // Suponiendo que el ID del usuario se envía en el cuerpo de la solicitud
   
     // Verificamos si el libro existe
     if (books[isbn]) {
